@@ -30,7 +30,7 @@ export default class SalesOrdersIndexDetailsController extends Controller {
      * @returns {Transition} The transition object representing the route change.
      */
     @action transitionBack() {
-        return this.transitionToRoute('sales-orders.index');
+        return this.hostRouter.transitionTo('console.pallet.sales-orders.index');
     }
 
     /**
@@ -42,7 +42,7 @@ export default class SalesOrdersIndexDetailsController extends Controller {
      * @returns {Transition} The transition object representing the route change.
      */
     @action onEdit(salesOrder) {
-        return this.transitionToRoute('sales-orders.index.edit', salesOrder);
+        return this.hostRouter.transitionTo('console.pallet.sales-orders.index.edit', salesOrder);
     }
 
     /**

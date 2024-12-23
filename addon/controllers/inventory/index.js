@@ -270,7 +270,7 @@ export default class InventoryIndexController extends Controller {
      * @void
      */
     @action viewInventory(inventory) {
-        return this.transitionToRoute('inventory.index.details', inventory.public_id);
+        return this.hostRouter.transitionTo('console.pallet.inventory.index.details', inventory.public_id);
     }
 
     /**
@@ -280,11 +280,11 @@ export default class InventoryIndexController extends Controller {
      * @void
      */
     @action createInventory() {
-        return this.transitionToRoute('inventory.index.new');
+        return this.hostRouter.transitionTo('console.pallet.inventory.index.new');
     }
 
     @action makeStockAdjustment() {
-        return this.transitionToRoute('inventory.index.new-stock-adjustment');
+        return this.hostRouter.transitionTo('console.pallet.inventory.index.new-stock-adjustment');
     }
 
     /**
@@ -295,6 +295,6 @@ export default class InventoryIndexController extends Controller {
      * @void
      */
     @action async editInventory(inventory) {
-        return this.transitionToRoute('inventory.index.edit', inventory);
+        return this.hostRouter.transitionTo('console.pallet.inventory.index.edit', inventory);
     }
 }

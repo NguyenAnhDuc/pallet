@@ -36,12 +36,12 @@ export default class SuppliersIndexEditController extends Controller {
             return this.confirmContinueWithUnsavedChanges(supplier, {
                 confirm: () => {
                     supplier.rollbackAttributes();
-                    return this.transitionToRoute('supplier.index');
+                    return this.hostRouter.transitionTo('console.pallet.supplier.index');
                 },
             });
         }
 
-        return this.transitionToRoute('supplier.index');
+        return this.hostRouter.transitionTo('console.pallet.supplier.index');
     }
 
     /**
@@ -67,7 +67,7 @@ export default class SuppliersIndexEditController extends Controller {
             return this.confirmContinueWithUnsavedChanges(supplier);
         }
 
-        return this.transitionToRoute('suppliers.index.details', supplier);
+        return this.hostRouter.transitionTo('console.pallet.suppliers.index.details', supplier);
     }
 
     /**
@@ -83,7 +83,7 @@ export default class SuppliersIndexEditController extends Controller {
         }
 
         this.hostRouter.refresh();
-        return this.transitionToRoute('suppliers.index.details', supplier);
+        return this.hostRouter.transitionTo('console.pallet.suppliers.index.details', supplier);
     }
 
     /**
@@ -102,7 +102,7 @@ export default class SuppliersIndexEditController extends Controller {
             acceptButtonText: 'Continue without saving',
             confirm: () => {
                 supplier.rollbackAttributes();
-                return this.transitionToRoute('supplier.index.details', supplier);
+                return this.hostRouter.transitionTo('console.pallet.supplier.index.details', supplier);
             },
             ...options,
         });

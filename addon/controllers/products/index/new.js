@@ -56,7 +56,7 @@ export default class ProductsIndexNewController extends Controller {
      * @memberof ProductsIndexNewController
      */
     @action transitionBack() {
-        return this.transitionToRoute('products.index');
+        return this.hostRouter.transitionTo('console.pallet.products.index');
     }
 
     /**
@@ -72,7 +72,7 @@ export default class ProductsIndexNewController extends Controller {
         }
 
         this.hostRouter.refresh();
-        return this.transitionToRoute('products.index.details', product).then(() => {
+        return this.hostRouter.transitionTo('console.pallet.products.index.details', product).then(() => {
             this.resetForm();
         });
     }

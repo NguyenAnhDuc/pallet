@@ -37,12 +37,12 @@ export default class WarehousesIndexEditController extends Controller {
             return this.confirmContinueWithUnsavedChanges(warehouse, {
                 confirm: () => {
                     warehouse.rollbackAttributes();
-                    return this.transitionToRoute('management.warehouses.index');
+                    return this.hostRouter.transitionTo('console.pallet.management.warehouses.index');
                 },
             });
         }
 
-        return this.transitionToRoute('warehouses.index');
+        return this.hostRouter.transitionTo('console.pallet.warehouses.index');
     }
 
     /**
@@ -68,7 +68,7 @@ export default class WarehousesIndexEditController extends Controller {
             return this.confirmContinueWithUnsavedChanges(warehouse);
         }
 
-        return this.transitionToRoute('warehouses.index.details', warehouse);
+        return this.hostRouter.transitionTo('console.pallet.warehouses.index.details', warehouse);
     }
 
     /**
@@ -84,7 +84,7 @@ export default class WarehousesIndexEditController extends Controller {
         }
 
         this.hostRouter.refresh();
-        return this.transitionToRoute('warehouses.index.details', warehouse);
+        return this.hostRouter.transitionTo('console.pallet.warehouses.index.details', warehouse);
     }
 
     /**
@@ -103,7 +103,7 @@ export default class WarehousesIndexEditController extends Controller {
             acceptButtonText: 'Continue without saving',
             confirm: () => {
                 warehouse.rollbackAttributes();
-                return this.transitionToRoute('warehouses.index.details', warehouse);
+                return this.hostRouter.transitionTo('console.pallet.warehouses.index.details', warehouse);
             },
             ...options,
         });

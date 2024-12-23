@@ -27,7 +27,7 @@ export default class SuppliersIndexDetailsController extends Controller {
      * @returns {Transition} The transition object representing the route change.
      */
     @action transitionBack() {
-        return this.transitionToRoute('suppliers.index');
+        return this.hostRouter.transitionTo('console.pallet.suppliers.index');
     }
 
     /**
@@ -39,7 +39,7 @@ export default class SuppliersIndexDetailsController extends Controller {
      * @returns {Transition} The transition object representing the route change.
      */
     @action onEdit(supplier) {
-        return this.transitionToRoute('suppliers.index.edit', supplier);
+        return this.hostRouter.transitionTo('console.pallet.suppliers.index.edit', supplier);
     }
 
     /**

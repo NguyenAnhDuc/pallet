@@ -241,7 +241,7 @@ export default class SalesOrdersIndexController extends Controller {
      * @void
      */
     @action viewSalesOrder(salesOrder) {
-        this.transitionToRoute('sales-orders.index.details', salesOrder);
+        this.hostRouter.transitionTo('console.pallet.sales-orders.index.details', salesOrder);
     }
 
     /**
@@ -250,7 +250,7 @@ export default class SalesOrdersIndexController extends Controller {
      * @void
      */
     @action createSalesOrder() {
-        this.transitionToRoute('sales-orders.index.new');
+        this.hostRouter.transitionTo('console.pallet.sales-orders.index.new');
     }
 
     /**
@@ -260,7 +260,7 @@ export default class SalesOrdersIndexController extends Controller {
      * @void
      */
     @action editSalesOrder(salesOrder) {
-        this.transitionToRoute('sales-orders.index.edit', salesOrder);
+        this.hostRouter.transitionTo('console.pallet.sales-orders.index.edit', salesOrder);
     }
 
     /**

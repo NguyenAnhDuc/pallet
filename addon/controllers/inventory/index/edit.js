@@ -36,12 +36,12 @@ export default class InventoryIndexEditController extends Controller {
             return this.confirmContinueWithUnsavedChanges(inventory, {
                 confirm: () => {
                     inventory.rollbackAttributes();
-                    return this.transitionToRoute('inventory.index');
+                    return this.hostRouter.transitionTo('console.pallet.inventory.index');
                 },
             });
         }
 
-        return this.transitionToRoute('inventory.index');
+        return this.hostRouter.transitionTo('console.pallet.inventory.index');
     }
 
     /**
@@ -67,7 +67,7 @@ export default class InventoryIndexEditController extends Controller {
             return this.confirmContinueWithUnsavedChanges(inventory);
         }
 
-        return this.transitionToRoute('inventory.index.details', inventory);
+        return this.hostRouter.transitionTo('console.pallet.inventory.index.details', inventory);
     }
 
     /**
@@ -83,7 +83,7 @@ export default class InventoryIndexEditController extends Controller {
         }
 
         this.hostRouter.refresh();
-        return this.transitionToRoute('inventory.index.details', inventory);
+        return this.hostRouter.transitionTo('console.pallet.inventory.index.details', inventory);
     }
 
     /**
@@ -102,7 +102,7 @@ export default class InventoryIndexEditController extends Controller {
             acceptButtonText: 'Continue without saving',
             confirm: () => {
                 inventory.rollbackAttributes();
-                return this.transitionToRoute('inventory.index.details', inventory);
+                return this.hostRouter.transitionTo('console.pallet.inventory.index.details', inventory);
             },
             ...options,
         });

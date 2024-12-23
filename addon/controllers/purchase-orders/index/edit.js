@@ -36,12 +36,12 @@ export default class PurchaseOrdersIndexEditController extends Controller {
             return this.confirmContinueWithUnsavedChanges(purchaseOrder, {
                 confirm: () => {
                     purchaseOrder.rollbackAttributes();
-                    return this.transitionToRoute('purchase-orders.index');
+                    return this.hostRouter.transitionTo('console.pallet.purchase-orders.index');
                 },
             });
         }
 
-        return this.transitionToRoute('purchase-orders.index');
+        return this.hostRouter.transitionTo('console.pallet.purchase-orders.index');
     }
 
     /**
@@ -67,7 +67,7 @@ export default class PurchaseOrdersIndexEditController extends Controller {
             return this.confirmContinueWithUnsavedChanges(purchaseOrder);
         }
 
-        return this.transitionToRoute('purchase-orders.index.details', purchaseOrder);
+        return this.hostRouter.transitionTo('console.pallet.purchase-orders.index.details', purchaseOrder);
     }
 
     /**
@@ -83,7 +83,7 @@ export default class PurchaseOrdersIndexEditController extends Controller {
         }
 
         this.hostRouter.refresh();
-        return this.transitionToRoute('purchase-orders.details', purchaseOrder);
+        return this.hostRouter.transitionTo('console.pallet.purchase-orders.details', purchaseOrder);
     }
 
     /**
@@ -102,7 +102,7 @@ export default class PurchaseOrdersIndexEditController extends Controller {
             acceptButtonText: 'Continue without saving',
             confirm: () => {
                 purchaseOrder.rollbackAttributes();
-                return this.transitionToRoute('purchase-orders.index.details', purchaseOrder);
+                return this.hostRouter.transitionTo('console.pallet.purchase-orders.index.details', purchaseOrder);
             },
             ...options,
         });

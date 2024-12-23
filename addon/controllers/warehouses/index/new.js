@@ -60,7 +60,7 @@ export default class WarehousesIndexNewController extends Controller {
      * @memberof WarehousesIndexNewController
      */
     @action transitionBack() {
-        return this.transitionToRoute('warehouses.index');
+        return this.hostRouter.transitionTo('console.pallet.warehouses.index');
     }
 
     /**
@@ -76,7 +76,7 @@ export default class WarehousesIndexNewController extends Controller {
         }
 
         this.hostRouter.refresh();
-        return this.transitionToRoute('warehouses.index.details', warehouse).then(() => {
+        return this.hostRouter.transitionTo('console.pallet.warehouses.index.details', warehouse).then(() => {
             this.resetForm();
         });
     }

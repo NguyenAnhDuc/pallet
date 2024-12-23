@@ -374,7 +374,7 @@ export default class SuppliersIndexController extends Controller {
      * @void
      */
     @action viewSupplier(supplier) {
-        return this.transitionToRoute('suppliers.index.details', supplier);
+        return this.hostRouter.transitionTo('console.pallet.suppliers.index.details', supplier);
     }
 
     /**
@@ -383,7 +383,7 @@ export default class SuppliersIndexController extends Controller {
      * @void
      */
     @action async createSupplier() {
-        return this.transitionToRoute('suppliers.index.new');
+        return this.hostRouter.transitionTo('console.pallet.suppliers.index.new');
     }
 
     /**
@@ -393,7 +393,7 @@ export default class SuppliersIndexController extends Controller {
      * @void
      */
     @action editSupplier(supplier) {
-        return this.transitionToRoute('suppliers.index.edit', supplier);
+        return this.hostRouter.transitionTo('console.pallet.suppliers.index.edit', supplier);
     }
 
     /**

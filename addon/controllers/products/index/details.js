@@ -27,7 +27,7 @@ export default class ProductsIndexDetailsController extends Controller {
      * @returns {Transition} The transition object representing the route change.
      */
     @action transitionBack() {
-        return this.transitionToRoute('products.index');
+        return this.hostRouter.transitionTo('console.pallet.products.index');
     }
 
     /**
@@ -39,7 +39,7 @@ export default class ProductsIndexDetailsController extends Controller {
      * @returns {Transition} The transition object representing the route change.
      */
     @action onEdit(product) {
-        return this.transitionToRoute('products.index.edit', product);
+        return this.hostRouter.transitionTo('console.pallet.products.index.edit', product);
     }
 
     /**

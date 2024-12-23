@@ -56,7 +56,7 @@ export default class SuppliersIndexNewController extends Controller {
      * @memberof ManagementSupplierIndexNewController
      */
     @action transitionBack() {
-        return this.transitionToRoute('suppliers.index');
+        return this.hostRouter.transitionTo('console.pallet.suppliers.index');
     }
 
     /**
@@ -72,7 +72,7 @@ export default class SuppliersIndexNewController extends Controller {
         }
 
         this.hostRouter.refresh();
-        return this.transitionToRoute('suppliers.index.details', supplier).then(() => {
+        return this.hostRouter.transitionTo('console.pallet.suppliers.index.details', supplier).then(() => {
             this.resetForm();
         });
     }

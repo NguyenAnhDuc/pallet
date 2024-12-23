@@ -27,7 +27,7 @@ export default class WarehousesIndexDetailsController extends Controller {
      * @returns {Transition} The transition object representing the route change.
      */
     @action transitionBack() {
-        return this.transitionToRoute('warehouses.index');
+        return this.hostRouter.transitionTo('console.pallet.warehouses.index');
     }
 
     /**
@@ -39,7 +39,7 @@ export default class WarehousesIndexDetailsController extends Controller {
      * @returns {Transition} The transition object representing the route change.
      */
     @action onEdit(warehouse) {
-        return this.transitionToRoute('warehouses.index.edit', warehouse);
+        return this.hostRouter.transitionTo('console.pallet.warehouses.index.edit', warehouse);
     }
 
     /**

@@ -60,7 +60,7 @@ export default class InventoryIndexNewController extends Controller {
      * @memberof InventoryIndexNewController
      */
     @action transitionBack() {
-        return this.transitionToRoute('inventory.index');
+        return this.hostRouter.transitionTo('console.pallet.inventory.index');
     }
 
     /**
@@ -76,7 +76,7 @@ export default class InventoryIndexNewController extends Controller {
         }
 
         this.hostRouter.refresh();
-        return this.transitionToRoute('inventory.index.details', inventory).then(() => {
+        return this.hostRouter.transitionTo('console.pallet.inventory.index.details', inventory).then(() => {
             this.resetForm();
         });
     }

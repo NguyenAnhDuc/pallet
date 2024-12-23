@@ -336,7 +336,7 @@ export default class ProductsIndexController extends Controller {
      * @void
      */
     @action viewProduct(product) {
-        return this.transitionToRoute('products.index.details', product);
+        return this.hostRouter.transitionTo('console.pallet.products.index.details', product);
     }
 
     /**
@@ -345,7 +345,7 @@ export default class ProductsIndexController extends Controller {
      * @void
      */
     @action createProduct() {
-        return this.transitionToRoute('products.index.new');
+        return this.hostRouter.transitionTo('console.pallet.products.index.new');
     }
     /**
      * Edit a `product` details
@@ -355,7 +355,7 @@ export default class ProductsIndexController extends Controller {
      * @void
      */
     @action async editProduct(product) {
-        return this.transitionToRoute('products.index.edit', product);
+        return this.hostRouter.transitionTo('console.pallet.products.index.edit', product);
     }
 
     /**

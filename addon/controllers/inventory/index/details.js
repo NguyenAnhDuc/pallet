@@ -30,7 +30,7 @@ export default class InventoryIndexDetailsController extends Controller {
      * @returns {Transition} The transition object representing the route change.
      */
     @action transitionBack() {
-        return this.transitionToRoute('inventory.index');
+        return this.hostRouter.transitionTo('console.pallet.inventory.index');
     }
 
     /**
@@ -42,7 +42,7 @@ export default class InventoryIndexDetailsController extends Controller {
      * @returns {Transition} The transition object representing the route change.
      */
     @action onEdit(inventory) {
-        return this.transitionToRoute('inventory.index.edit', inventory);
+        return this.hostRouter.transitionTo('console.pallet.inventory.index.edit', inventory);
     }
 
     /**

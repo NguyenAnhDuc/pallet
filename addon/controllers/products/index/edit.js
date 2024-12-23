@@ -37,12 +37,12 @@ export default class ProductsIndexEditController extends Controller {
             return this.confirmContinueWithUnsavedChanges(product, {
                 confirm: () => {
                     product.rollbackAttributes();
-                    return this.transitionToRoute('products.index');
+                    return this.hostRouter.transitionTo('console.pallet.products.index');
                 },
             });
         }
 
-        return this.transitionToRoute('products.index');
+        return this.hostRouter.transitionTo('console.pallet.products.index');
     }
 
     /**
@@ -68,7 +68,7 @@ export default class ProductsIndexEditController extends Controller {
             return this.confirmContinueWithUnsavedChanges(product);
         }
 
-        return this.transitionToRoute('products.index.details', product);
+        return this.hostRouter.transitionTo('console.pallet.products.index.details', product);
     }
 
     /**
@@ -84,7 +84,7 @@ export default class ProductsIndexEditController extends Controller {
         }
 
         this.hostRouter.refresh();
-        return this.transitionToRoute('products.index.details', product);
+        return this.hostRouter.transitionTo('console.pallet.products.index.details', product);
     }
 
     /**
@@ -103,7 +103,7 @@ export default class ProductsIndexEditController extends Controller {
             acceptButtonText: 'Continue without saving',
             confirm: () => {
                 product.rollbackAttributes();
-                return this.transitionToRoute('products.index.details', product);
+                return this.hostRouter.transitionTo('console.pallet.products.index.details', product);
             },
             ...options,
         });

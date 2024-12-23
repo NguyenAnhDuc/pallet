@@ -332,7 +332,7 @@ export default class WarehousesIndexController extends Controller {
      * @void
      */
     @action viewWarehouse(warehouse) {
-        this.transitionToRoute('warehouses.index.details', warehouse);
+        this.hostRouter.transitionTo('console.pallet.warehouses.index.details', warehouse);
     }
 
     /**
@@ -342,7 +342,7 @@ export default class WarehousesIndexController extends Controller {
      * @void
      */
     @action createWarehouse() {
-        this.transitionToRoute('warehouses.index.new');
+        this.hostRouter.transitionTo('console.pallet.warehouses.index.new');
     }
 
     /**
@@ -353,7 +353,7 @@ export default class WarehousesIndexController extends Controller {
      * @void
      */
     @action async editWarehouse(warehouse) {
-        this.transitionToRoute('warehouses.index.edit', warehouse);
+        this.hostRouter.transitionTo('console.pallet.warehouses.index.edit', warehouse);
     }
 
     /**
