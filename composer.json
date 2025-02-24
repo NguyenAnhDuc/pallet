@@ -1,5 +1,5 @@
 {
-    "name": "fleetbase/pallet-api",
+    "name": "ducna01120/pallet-api",
     "version": "0.0.2",
     "description": "Inventory & Warehouse Management Extension for Fleetbase",
     "keywords": [
@@ -25,8 +25,8 @@
     ],
     "require": {
         "php": "^8.0",
-        "fleetbase/core-api": "*",
-        "fleetbase/fleetops-api": "*",
+      "ducna01120/core-api": "*",
+      "ducna01120/fleetops-api": "*",
         "php-http/guzzle7-adapter": "^1.0",
         "psr/http-factory-implementation": "*"
     },
