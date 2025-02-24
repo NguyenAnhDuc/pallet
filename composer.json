@@ -1,6 +1,6 @@
 {
     "name": "ducna01120/pallet-api",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Inventory & Warehouse Management Extension for Fleetbase",
     "keywords": [
         "fleetbase",
