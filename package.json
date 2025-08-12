@@ -42,8 +42,8 @@
     },
     "dependencies": {
         "@fleetbase/ember-core": "latest",
-        "@fleetbase/ember-ui": "latest",
-        "@fleetbase/fleetops-data": "latest",
+        "@fleetbase/ember-ui": "link:../ember-ui",
+        "@fleetbase/fleetops-data": "link:../fleetops-data",
         "@fleetbase/leaflet-routing-machine": "^3.2.16",
         "@fortawesome/ember-fontawesome": "^2.0.0",
         "@fortawesome/fontawesome-svg-core": "6.4.0",
